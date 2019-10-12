@@ -4,12 +4,12 @@
 
 #### about:config changes
 
-`toolkit.legacyUserProfileCustomizations.stylesheets`: `true` (enable userChrome.css)
-`browser.urlbar.trimURLs`: `false` (returns the http:// in the URL bar)
-`browser.urlbar.suggest.history`: `false`
-`browser.urlbar.trimURLs`. `false`
-`browser.search.suggest.enabled`: `false`
-`extensions.pocket.enabled`: `false`
+- `toolkit.legacyUserProfileCustomizations.stylesheets`: - `true` (enable userChrome.css)
+- `browser.urlbar.trimURLs`: `false` (returns the http:// - in the URL bar)
+- `browser.urlbar.suggest.history`: `false`
+- `browser.urlbar.trimURLs`. `false`
+- `browser.search.suggest.enabled`: `false`
+- `extensions.pocket.enabled`: `false`
 
 #### Recommended addons
 
