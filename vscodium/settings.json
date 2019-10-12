@@ -1,0 +1,11 @@
+{
+    "workbench.iconTheme": "vscode-icons",
+    "workbench.settings.useSplitJSON": true,
+    "workbench.settings.editor": "json",
+    "workbench.editor.restoreViewState": false,
+
+    "window.restoreWindows": "none",
+    "window.zoomLevel": 1,
+
+    "files.insertFinalNewline": true
+}

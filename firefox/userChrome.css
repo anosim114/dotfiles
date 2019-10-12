@@ -1,0 +1,85 @@
+.tabbrowser-tab::after,
+.tabbrowser-tab::before {
+  border: none !important;
+  color: grey !important;
+  opacity: .2 !important;
+}
+
+.tabbrowser-tab[visuallyselected="true"] {
+  box-shadow: 0px 0px 24px 0px rgba(0, 0, 0, 0.33);
+}
+
+.tab-line {
+  display: none !important;
+}
+
+#urlbar,
+.searchbar-textbox,
+#urlbar:hover,
+.searchbar-textbox:hover {
+  background: transparent !important;
+  height: 24px !important;
+  padding: 0px !important;
+  font-size: 1.1em !important;
+  outline: none !important;
+  box-shadow: none !important;
+  border: none !important;
+  -moz-appearance: none;
+  margin: 4px 0px !important;
+  min-height: 24px !important;
+  cursor: default;
+}
+
+/* Borders inside URL bar */
+#identity-box {
+  border: 0 !important;
+  padding: 0 4px !important;
+}
+
+#identity-icon-labels {
+  display: none !important;;
+}
+
+/* Hide titlebar spaces */
+.titlebar-spacer:first-child {
+  display: none;
+}
+
+#urlbar {
+  padding: 0 !important;
+  border-radius: 16px !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.urlbar-input {
+  transition: color .1s ease;
+}
+
+.urlbar-input:not([focused=true]) {
+  color: #555 !important;
+}
+
+#urlbar:not(:hover) #page-action-buttons,
+#urlbar:not(:hover) #identity-box {
+  opacity: 0 !important;;
+}
+
+#page-action-buttons:not(:hover),
+#urlbar[focused=true] #page-action-buttons{
+  opacity: 1 !important;;
+}
+
+.urlbar-input:hover,
+#urlbar[focused=true] {
+  color: #000 !important;
+}
+
+.urlbar-page-action,
+.urlbar-icon {
+  border-radius: 16px;
+}
+
+#nav-bar {
+  background-color: #ffffff !important;;
+}
