@@ -21,31 +21,29 @@
 ## Windows recommended software list
 
 #### Installation, Tweaking, ...
-- [] Chocolatey (package manager for windows to download everything from this list)
-    - [p] -> included in choco command
-- [p] Winaero tweaker (tweak the stuff out of it)
-- [] Startisback++ (better startmenu)
-- [p] Crystal Disk Info (Hard Drive tool)
-- [p] Cmder (better cmd gui)
+- Chocolatey (package manager for windows to download everything from this list)
+- Winaero tweaker (tweak the heck out of it)
+- Startisback++ (better startmenu)
+- Crystal Disk Info (Hard Drive tool)
+- Cmder (better cmd gui)
 
 #### Text Editing
-- [p] VSCodium
-- [p] Vim
-- [p] Notepad++
+- VSCodium
+- Vim
+- Notepad++
 
 #### Tools
-- [p] 7zip
-- [p] Git
+- 7zip
+- Git
 
 #### Internet
-- [p] Firefox
-- [p] FileZilla
+- Firefox
+- FileZilla
 
 #### Video, Images, Media
-- [p] OBS Studio
-- [p] mpv or mpv.net (media player)
-- [p] nomacs (image viewer)
-- [] PaintTool SAI 2
-- [p] Inkscape
-
-install-all-choco-command: `choco install winaero-tweaker crystaldiskinfo cmder vscodium vim notepadplusplus 7zip git firefox filezilla obs-studio mpv nomacs inkscape`
+- OBS Studio
+- vlc
+- mpv.net (media player)
+- nomacs (image viewer)
+- PaintTool SAI 2
+- Inkscape
