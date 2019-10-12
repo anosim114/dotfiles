@@ -18,6 +18,9 @@
 - I don't care about cookies
 - HTTPS Everywhere
 
+#### userChrome.css look
+![userChrome.css](resources/firefox_css.png)
+
 ## Windows recommended software list
 
 #### Installation, Tweaking, ...
