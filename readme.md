@@ -1,4 +1,4 @@
-# windows, linux and stuff configs
+# windows, linux and other programs
 
 ## Firefox tweaks
 
@@ -24,7 +24,6 @@
 - Chocolatey (package manager for windows to download everything from this list)
 - Winaero tweaker (tweak the heck out of it)
 - Startisback++ (better startmenu)
-- Crystal Disk Info (Hard Drive tool)
 - Cmder (better cmd gui)
 
 #### Text Editing
@@ -33,6 +32,7 @@
 - Notepad++
 
 #### Tools
+- Crystal Disk Info (Hard Drive info)
 - 7zip
 - Git
 
@@ -42,7 +42,7 @@
 
 #### Video, Images, Media
 - OBS Studio
-- vlc
+- VLC
 - mpv.net (media player)
 - nomacs (image viewer)
 - PaintTool SAI 2
