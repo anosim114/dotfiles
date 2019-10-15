@@ -52,3 +52,11 @@
 - nomacs (image viewer)
 - PaintTool SAI 2
 - Inkscape
+
+## Tips 'n Tricks
+
+#### Add an icon to your program in Windows
+1. create resource file `my.rc`
+2. add in there your icon path: `id ICON "/icon.ico"`
+3. compile the recource file: `windres .\resource.rc -O coff -o my.res"`
+4. and compile your program with it: `gcc main.c my.res -o exe_with_icon.exe`
