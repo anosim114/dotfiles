@@ -10,6 +10,8 @@
 - `browser.urlbar.trimURLs`: `false`
 - `browser.search.suggest.enabled`: `false`
 - `extensions.pocket.enabled`: `false`
+- `layout.css.backdrop-filter.enabled`: `true`
+- `gfx.webrender.all`: `true`
 
 #### Recommended addons
 
