@@ -19,6 +19,7 @@
 - Violentmonkey
 - I don't care about cookies
 - HTTPS Everywhere
+- SingleFileZ ( To manually archive websites )
 
 #### userChrome.css look
 ![userChrome.css](resources/firefox_css.png)
@@ -34,7 +35,6 @@
 #### Text Editing
 - VSCodium
 - Vim
-- Notepad++
 
 #### Tools
 - Crystal Disk Info (Hard Drive info)
