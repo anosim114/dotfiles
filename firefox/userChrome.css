@@ -1,5 +1,12 @@
-/* https://github.com/coekuss/quietfox
-Thanks for using my file */
+/*
+
+Quietfox for Firefox 71.0
+
+https://github.com/coekuss/quietfox
+
+Thanks for using my file
+
+ */
 
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 
@@ -7,20 +14,23 @@ Thanks for using my file */
 * { 
 /* -------------------- 🎨 Customization 🎨 -------------------- */
     --tab-corner-rounding: 5px;
-    --animation-speed: 0.2s;
-    --button-corner-rounding: 30px;
+    --animation-speed: 0.25s;
+    --button-corner-rounding: 4px;
+    
 }
+
+
 
 
 /* Bottom corner rounding for tabs, Remove this section if your tab bottom corners look bad */
 tab[visuallyselected] .tab-background::before,
 tab[visuallyselected] .tab-background::after {
     content: "" !important;
-    display: -moz-box !important;
+    display: inline !important;
     position: absolute !important;
     width: var(--tab-corner-rounding) !important;
     height: var(--tab-corner-rounding) !important;
-    bottom: 0 !important;
+    bottom: 0px !important;
     pointer-events: none !important;
     background-color: transparent !important;
     transition: var(--animation-speed) !important;
@@ -28,9 +38,8 @@ tab[visuallyselected] .tab-background::after {
 
 tab[visuallyselected] .tab-background::before {
     border-bottom-right-radius: var(--tab-corner-rounding) !important;
-    left: 0px !important;
-    transform: translateX(calc(-1 * var(--tab-corner-rounding) - 1px)) !important;
-    box-shadow: 4px 4px 0 4px var(--toolbar-bgcolor) !important;
+    transform: translateX(calc(-1 * var(--tab-corner-rounding))) !important;
+    box-shadow: 4px 4px 0px 4px var(--toolbar-bgcolor) !important;
     transition: var(--animation-speed) !important;
 }
 
@@ -38,9 +47,9 @@ tab[visuallyselected] .tab-background::after {
     border-bottom-left-radius: var(--tab-corner-rounding) !important;
     right: 0px !important;
     transform: translateX(var(--tab-corner-rounding)) !important;
-    box-shadow: -4px 4px 0 4px var(--toolbar-bgcolor) !important;
+    box-shadow: -4px 4px 0px 4px var(--toolbar-bgcolor) !important;
     transition: var(--animation-speed) !important;
-}     
+}
 /* --------------------------------------------------------------------------------------- */
 
 
@@ -74,15 +83,21 @@ vbox
 
 /* -------------------- Style tab bar -------------------- */
 
+.titlebar-spacer[type="pre-tabs"] {
+    border-inline-end: 0px !important;
+    width: 0px !important;
+}
+
+scrollbox[part="scrollbox"][flex="1"][orient="horizontal"][smoothscroll="true"] {
+    padding-left: 12px !important;
+}
+
 
 .tab-background, .tab-loading-burst  {
     border-radius: var(--tab-corner-rounding) var(--tab-corner-rounding) 0px 0px !important;
     margin: -1px !important;
 
 }
-
-
-
 
 tab:not(:active) .tab-background {
     transition: background-color var(--animation-speed) !important;
@@ -124,29 +139,7 @@ tab:hover::after {
     --tabs-border-color: transparent !important;
 }
 
-.titlebar-spacer[type="pre-tabs"] {
-    border-inline-end: 0px !important;
-    width: 0px !important;
-}
 
-
-
-tabs:not([overflow]) .tabbrowser-arrowscrollbox > .arrowscrollbox-scrollbox {
-    padding-left: 12px !important;
-}
-
-tabs[overflow] .tabbrowser-arrowscrollbox > .scrollbutton-up {
-    margin-left: 12px !important;
-}
-
-.tabbrowser-arrowscrollbox > .arrowscrollbox-scrollbox {
-    padding-right: var(--tab-corner-rounding) !important;
-}
-
-.tabs-newtab-button {
-    margin-left: 3px !important;
-    margin-bottom: 3px !important;
-}
 
 tab[visuallyselected] {
         box-shadow: 0px 3px 12px -5px black !important;
@@ -185,7 +178,13 @@ toolbarbutton:not(#back-button):not([disabled]):not([open]):hover,
     border: 1px solid grey !important;
 }
 
-/* not compact buttons */
+#BMB_bookmarksShowAll {
+    display: none !important;
+}
+
+
+
+/* touch and normal density buttons */
 
 :root:not([uidensity="compact"]) #back-button > .toolbarbutton-icon {
     background-color: transparent !important;
@@ -221,12 +220,16 @@ toolbarbutton:not(#back-button):not([disabled]):not([open]):hover,
 /* normal density buttons */
 
 :root:not([uidensity="touch"]):not([uidensity="compact"]) #nav-bar .toolbarbutton-1:not(#back-button)  {
-    margin-top: 5px !important;
-    margin-bottom: 5px !important;
+    margin-top: 4px !important;
+    margin-bottom: 4px !important;
     margin-left: 0px !important;
     margin-right: 0px !important;
-    padding-left: 2px !important;
-    padding-right: 2px !important;
+    padding-left: 3px !important;
+    padding-right: 3px !important;
+}
+
+:root:not([uidensity="touch"]):not([uidensity="compact"]) #nav-bar .toolbarbutton-1:not(#back-button) image  {
+    margin-bottom: 1px !important;
 }
 
 :root:not([uidensity="touch"]):not([uidensity="compact"]) #back-button {
@@ -234,23 +237,37 @@ toolbarbutton:not(#back-button):not([disabled]):not([open]):hover,
     margin-bottom: -1px !important;
 }
 
-:root:not([uidensity="touch"]):not([uidensity="compact"]) .tabs-newtab-button {
-    padding-right: 1px !important;
-    padding-left: 1px !important;
-}
 
-:root:not([uidensity="touch"]):not([uidensity="compact"]) #identity-box {
+
+:root:not([uidensity="touch"]):not([uidensity="compact"]) #identity-box,
+:root:not([uidensity="touch"]):not([uidensity="compact"]) #tracking-protection-icon-container {
     padding-left: 8px !important;
     padding-right: 8px !important;
 }
 
+:root:not([uidensity="touch"]):not([uidensity="compact"]) #identity-icon, 
+:root:not([uidensity="touch"]):not([uidensity="compact"]) #tracking-protection-icon-box {
+    margin-left: 1px !important;
+    margin-right: 1px !important;
+}
+
+
+
+
+:root:not([uidensity="touch"]):not([uidensity="compact"]) .urlbar-icon {
+    margin-top: 1px !important;
+    margin-bottom: 1px !important;
+}
 
 
 :root:not([uidensity="touch"]):not([uidensity="compact"]) #urlbar {
     height: 36px !important;
-    padding-top: 1px !important;
-    padding-bottom: 1px !important;
+    margin-top: 0px !important;
+    margin-bottom: 0px !important;
+    padding-top: 0px !important;
+    padding-bottom: 0px !important;
 }
+
 
 :root:not([uidensity="touch"]):not([uidensity="compact"]) .urlbar-icon:not(#pocket-button) {
     width: 32px !important;
@@ -278,6 +295,15 @@ toolbarbutton:not(#back-button):not([disabled]):not([open]):hover,
     margin-left: 5px !important;
 }
 
+:root:not([uidensity="touch"]):not([uidensity="compact"]) #tabs-newtab-button {
+    margin-left: 1px !important;
+    margin-bottom: 1px !important;
+    padding-bottom: 1px !important;
+}
+
+:root:not([uidensity="touch"]):not([uidensity="compact"]) #library-animatable-box {
+    margin-top: 4px !important;
+}
 
 
 
@@ -285,18 +311,18 @@ toolbarbutton:not(#back-button):not([disabled]):not([open]):hover,
 /* compact density buttons */
 
 :root[uidensity="compact"] #nav-bar .toolbarbutton-1  {
-    margin-top: 2px !important;
-    margin-bottom: 1px !important;
+    margin-top: 4px !important;
+    margin-bottom: 4px !important;
     padding: 0px 0px 0px 0px !important;
 }
+
+
+
 
 :root[uidensity="compact"] #nav-bar toolbaritem[animate] box {
     margin-top: 1px !important;
 }
 
-:root[uidensity="compact"] .tabs-newtab-button {
-    padding: 0px !important;
-}
 
 :root[uidensity="compact"] #back-button[open] {
     background-color: var(--toolbarbutton-active-background) !important; 
@@ -310,7 +336,8 @@ toolbarbutton:not(#back-button):not([disabled]):not([open]):hover,
     background-color: var(--toolbarbutton-active-background) !important;
 }
 
-:root[uidensity="compact"] #identity-box {
+:root[uidensity="compact"] #identity-box,
+:root[uidensity="compact"] #tracking-protection-icon-container {
     min-width: 2px !important;
     padding-left: 6px !important;
     padding-right: 6px !important;
@@ -354,32 +381,38 @@ toolbarbutton:not(#back-button):not([disabled]):not([open]):hover,
 }
 
 
+:root[uidensity="compact"] #tabs-newtab-button {
+    margin-left: 1px !important;
+    margin-bottom: 1px !important;
+    padding-bottom: 1px !important;
+}
 
+:root[uidensity="compact"] #library-animatable-box {
+    margin-top: 5px !important;
+}
 
 
 
 /* touch density buttons */
 
 :root[uidensity="touch"] #nav-bar .toolbarbutton-1:not(#back-button)  {
-    margin-top: 3px !important;
+    margin-top: 5px !important;
     margin-bottom: 3px !important;
     padding-left: 0px !important;
     padding-right: 0px !important;
 }
 
 
-
-
-
-
 :root[uidensity="touch"] #stop-reload-button[animate] .toolbarbutton-animatable-image {
-    margin-top: 1px !important;
+    margin-top: 2px !important;
 }
 
-:root[uidensity="touch"] #identity-box {
+:root[uidensity="touch"] #identity-box,
+:root[uidensity="touch"] #tracking-protection-icon-container {
     padding-left: 9px !important;
     padding-right: 9px !important;
 }
+
 
 :root[uidensity="touch"] #urlbar {
     height: 36px !important;
@@ -426,14 +459,21 @@ toolbarbutton:not(#back-button):not([disabled]):not([open]):hover,
     height: 40px !important;
 }
 
+:root[uidensity="touch"] #tabs-newtab-button {
+    margin-left: 3px !important;
+    margin-bottom: 3px !important;
+    padding-bottom: 1px !important;
+}
+
+:root[uidensity="touch"] #library-animatable-box {
+    margin-top: 7px !important;
+}
 
 
-
-
-
-
+/* various */
 .urlbar-input-box,
 #identity-box, 
+#tracking-protection-icon-container,
 .urlbar-history-dropmarker, 
 .urlbar-page-action,
 #reader-mode-button, 
@@ -471,22 +511,21 @@ toolbarbutton:not(.titlebar-button):not([class^="findbar-find"]):not([class^="sc
     margin-right: 0px !important;
 }
 
-#identity-popup[connection^="secure"], #identity-popup[mixedcontent] {
-    padding-left: 12px !important;
-}
-
-#urlbar:not([pageproxystate="invalid"]) #identity-box:not(.chromeUI):not([class="unknownIdentity"]):not([class="unknownIdentity no-hover"]) #identity-icon {
-    width: 0px !important;
-    margin-left: -4px !important;
-}
-
 
 
 /* style address bar */
-#urlbar-container *:not(#identity-box) {
+#urlbar-container *:not(#identity-box):not(#tracking-protection-icon-container) {
     border-color: transparent !important;
     box-shadow: none !important;
 }
+
+#tracking-protection-icon-container {
+    border-inline-end: none !important;
+}
+
+
+
+
 
 #pageActionSeparator {
     display: none !important;
@@ -534,31 +573,14 @@ toolbarbutton:not(.titlebar-button):not([class^="findbar-find"]):not([class^="sc
 }
 
 
-#library-button[animate] {
-    margin-bottom: 0px !important;
-    margin-top: 50px !important;
-}
-
-#library-button[animate] image {
-    margin-bottom: -120px !important;
-    margin-top: 100px !important;
-}
-
-
-
-
 .urlbar-scheme {
     padding-bottom: 11px !important;
 }
 
 
 #urlbar-container {
-    margin-left: -5px !important;
-    margin-right: -5px !important;
-}
-
-#urlbar-container #urlbar[pageproxystate="invalid"] {
-    margin-left: 5px !important;
+    margin-left: -1px !important;
+    margin-right: -1px !important;
 }
 
 .urlbar-input-box {
@@ -592,6 +614,7 @@ toolbarbutton:not(.titlebar-button):not([class^="findbar-find"]):not([class^="sc
 
 #urlbar:not([focused]) .urlbar-input-box:hover,
 #identity-box:hover, 
+#tracking-protection-icon-container:hover,
 .urlbar-icon:hover,
 .urlbar-icon-wrapper:hover,
 [anonid=urlbar-go-button]:hover {
@@ -600,6 +623,7 @@ toolbarbutton:not(.titlebar-button):not([class^="findbar-find"]):not([class^="sc
 
 
 #identity-box:active,
+#tracking-protection-icon-container:active,
 .urlbar-icon:active,
 .urlbar-icon-wrapper:active,
 [anonid=urlbar-go-button]:active {
@@ -608,10 +632,19 @@ toolbarbutton:not(.titlebar-button):not([class^="findbar-find"]):not([class^="sc
 
 .urlbar-input-box, 
 #identity-box,
+#tracking-protection-icon-container,
 [anonid=urlbar-go-button],
 #urlbar {
     transition: background-color var(--animation-speed) !important;
 }
+
+#tracking-protection-icon,
+#identity-box image {
+    transition: fill-opacity var(--animation-speed) !important;
+}
+
+
+
 
 [lwthemetextcolor="dark"] .urlbarView-body-outer {
     background-color: #f5f6f7 !important;
@@ -644,41 +677,16 @@ toolbarbutton:not(.titlebar-button):not([class^="findbar-find"]):not([class^="sc
     display: none !important;
 }
 
+menupopup {
+    -moz-appearance: none !important;
+}
+
 menu,
 menuitem, 
 menucaption {
     -moz-appearance: none !important;
     height: 25px !important;
 }
-
-menu[_moz-menuactive="true"]:not([disabled="true"]), 
-menuitem[_moz-menuactive="true"]:not([disabled="true"]), 
-menucaption[_moz-menuactive="true"]:not([disabled="true"]) {
-    background-color: var(--toolbarbutton-hover-background, rgba(127,127,127,0.5)) !important;
-}
-
-menu[disabled="true"], 
-menuitem[disabled="true"], 
-menucaption[disabled="true"] {
-    color: var(--toolbarbutton-hover-background, rgba(127,127,127,0.5)) !important;
-}
-
-menu[disabled="true"][_moz-menuactive="true"], 
-menuitem[disabled="true"][_moz-menuactive="true"], 
-menucaption[disabled="true"][_moz-menuactive="true"] {
-    color: var(--toolbarbutton-hover-background, rgba(127,127,127,0.5)) !important;
-    background-color: transparent !important;
-}
-
-menupopup .popup-internal-box {
-    background-color: Menu !important;
-}
-
-
-
-
-
-
 
 menu,
 menuitem, 
@@ -704,15 +712,9 @@ menu:not(.subviewbutton) > .menu-right image {
 
 
 
+
 @media (-moz-os-version: windows-xp), (-moz-os-version: windows-vista),
 (-moz-os-version: windows-win7), (-moz-os-version: windows-win8), (-moz-os-version: windows-win10) {
-
-    menupopup .popup-internal-box {
-        margin: -2px !important;
-        padding-bottom: 3px !important;
-        padding-top: 3px !important;
-    }
-
 
     .bookmark-item .scrollbutton-up {
         margin-top: -3px !important;
@@ -737,10 +739,6 @@ menu:not(.subviewbutton) > .menu-right image {
         border-right-color: transparent !important;
         border-left-color: transparent !important;
     }
-
-    menupopup {
-        margin-left: 1px !important;
-    }
     
     menu,
     menuitem, 
@@ -757,63 +755,6 @@ menu:not(.subviewbutton) > .menu-right image {
 
 
 
-
-
-/* context menu in developer toolbox (F12) */
-.theme-dark .popup-internal-box {
-    background-color: #323234 !important;
-    color: white !important;
-}
-
-.theme-light .popup-internal-box {
-    background-color: white !important;
-    color: black !important;
-}
-
-
-.theme-dark menu[_moz-menuactive="true"],
-.theme-dark menuitem[_moz-menuactive="true"],
-.theme-dark menucaption[_moz-menuactive="true"],
-.theme-light menu[_moz-menuactive="true"],
-.theme-light menuitem[_moz-menuactive="true"],
-.theme-light menucaption[_moz-menuactive="true"]{
-    background-color: rgba(127,127,127,0.5) !important;
-}
-
-.theme-dark menu[_moz-menuactive="true"],
-.theme-dark menuitem[_moz-menuactive="true"],
-.theme-dark menucaption[_moz-menuactive="true"] {
-    color: white !important;
-}
-
-.theme-dark menu[disabled="true"], 
-.theme-dark menuitem[disabled="true"], 
-.theme-dark menucaption[disabled="true"],
-.theme-light menu[disabled="true"], 
-.theme-light menuitem[disabled="true"], 
-.theme-light menucaption[disabled="true"] {
-    color: rgba(127,127,127,0.5) !important;
-    background-color: transparent !important;
-}
-
-.bookmark-item .scrollbutton-up > .toolbarbutton-icon {
-    margin-top: -2px !important;
-    border: 6px solid var(--toolbar-color) !important;
-    border-top-color: transparent !important;
-    border-right-color: transparent !important;
-    border-left-color: transparent !important;
-}
-
-.bookmark-item .scrollbutton-down > .toolbarbutton-icon {
-    margin-bottom: -2px !important;
-    border: 6px solid var(--toolbar-color) !important;
-    border-bottom-color: transparent !important;
-    border-right-color: transparent !important;
-    border-left-color: transparent !important;
-}
-
-
-
 /* make menus adapt to theme */
 menu,
 menuitem,
@@ -821,23 +762,33 @@ menucaption {
     color: var(--toolbar-color) !important;
 }
 
-[lwthemetextcolor="dark"] menupopup .popup-internal-box {
-    background-color: #f5f6f7 !important;
-}
-
-[lwthemetextcolor="bright"] menupopup .popup-internal-box {
-    background-color: #323234 !important;
-}
-
-menupopup .arrowscrollbox-scrollbox {
-    margin-top: -3px !important;
-    margin-bottom: -3px !important;
+menupopup {
     padding-top: 4px !important;
     padding-bottom: 4px !important;
-    background-color: var(--toolbar-bgcolor) !important;
+    background-color: var(--toolbar-bgcolor, Menu) !important;
 }
 
+menu[_moz-menuactive="true"]:not([disabled="true"]), 
+menuitem[_moz-menuactive="true"]:not([disabled="true"]), 
+menucaption[_moz-menuactive="true"]:not([disabled="true"]) {
+    background-color: var(--toolbarbutton-hover-background, rgba(127,127,127,0.5)) !important;
+}
 
+menu[disabled="true"], 
+menuitem[disabled="true"], 
+menucaption[disabled="true"] {
+    color: var(--toolbarbutton-hover-background, rgba(127,127,127,0.5)) !important;
+}
+
+menu[disabled="true"][_moz-menuactive="true"], 
+menuitem[disabled="true"][_moz-menuactive="true"], 
+menucaption[disabled="true"][_moz-menuactive="true"] {
+    background-color: transparent !important;
+}
+
+.panel-arrow {
+    fill: var(--toolbar-bgcolor) !important;
+}
 
 [lwthemetextcolor="dark"] panelview:not([extension]),
 [lwthemetextcolor="dark"] .panel-arrowcontent {
@@ -865,7 +816,7 @@ menupopup .arrowscrollbox-scrollbox {
 }
 
 .identity-popup-warning-yellow {
-    color: var(--toolbar-active-background) !important;
+    color: black !important;
 }
 
 panel:not([viewId^="PanelUI-webext"]) .panel-arrow {
@@ -875,5 +826,3 @@ panel:not([viewId^="PanelUI-webext"]) .panel-arrow {
 .bookmark-item [class^="scrollbutton"] {
     background-color: var(--toolbar-bgcolor) !important;
 }
-
-
