@@ -1,11 +1,18 @@
 {
-    "workbench.iconTheme": "vscode-icons",
     "workbench.settings.useSplitJSON": true,
     "workbench.settings.editor": "json",
     "workbench.editor.restoreViewState": false,
+    "workbench.colorTheme": "Deepdark Material Theme | Default Version",
+    "workbench.iconTheme": "vscode-icons",
 
     "window.restoreWindows": "none",
-    "window.zoomLevel": 1,
+    "window.zoomLevel": 0,
 
-    "files.insertFinalNewline": true
+    "files.insertFinalNewline": true,
+    
+    "[html]": {
+        "editor.defaultFormatter": "HookyQR.beautify"
+    },
+    "git.path": "C:\\tools\\Cmder\\vendor\\git-for-windows\\",
+    "vsicons.dontShowNewVersionMessage": true
 }
