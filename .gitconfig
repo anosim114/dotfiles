@@ -1,0 +1,24 @@
+[alias]
+  aliases = config --get-regexp alias
+  branches = branch --all
+  c = commit
+  ca = !git add -A && git commit -av
+  cleanup = "!git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d"
+  co = checkout
+  contributors = shortlog --summary --numbered
+  l = log --pretty=oneline -n 20 --graph --abbrev-commit
+  p = pull
+  r = rebase
+  s = status -s
+  whoami = config user.email
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[push]
+	autoSetupRemote = true
+[user]
+	name = -
+	email = 44647308+anosim114@users.noreply.github.com
+
